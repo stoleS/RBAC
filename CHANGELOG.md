@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.6](https://github.com/stoleS/kontrolle/compare/v0.1.3...v0.1.6) (2024-03-08)
+
+
+### Features
+
+* update readme ([185814d](https://github.com/stoleS/kontrolle/commit/185814dbb1279ff0c9751f4cf075bb14de74e31e))
+
+
+### Bug Fixes
+
+* remove deprecated flags ([e440f63](https://github.com/stoleS/kontrolle/commit/e440f63cdb6cdd8675e9d172f2d67f9af9d3d430))
+* update ava config ([f1c59be](https://github.com/stoleS/kontrolle/commit/f1c59be681efca678ce1bb84c00c498c6ce25932))
+* update cspell ([8971a21](https://github.com/stoleS/kontrolle/commit/8971a2178b2dd51c69b6886e1ca99d1aef29cca2))
+
 ### [0.1.3](https://github.com/stoleS/kontrolle/compare/v0.1.1...v0.1.3) (2024-03-06)
 
 
