@@ -5,7 +5,7 @@ import { defineKontrolle, defineRules, Kontrolle } from './kontrolle';
 const user: UserType = {
   id: 1,
   permissions: ['update', 'delete'],
-  isAdmin: false,
+  isAdmin: true,
 };
 
 const certificate: CertificateType = {
@@ -44,13 +44,18 @@ test('defineACL', (t) => {
         rules: ['update', 'delete'],
         requirement: (user: UserType) => user.isAdmin,
       },
+      {
+        rules: ['edit-certificate'],
+        requirement: (user: UserType) =>
+          Kontrolle.can(['delete-certificate'], certificate) && user.isAdmin,
+      },
     ],
     roles: [{ rules: 'admin', requirement: (user: UserType) => user.isAdmin }],
   });
 
   defineKontrolle(user, rules);
 
-  const res = Kontrolle.can(['delete-certificate'], certificate);
+  const res = Kontrolle.can(['edit-certificate']);
 
   t.is(res, true);
 });

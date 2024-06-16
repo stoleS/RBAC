@@ -114,12 +114,14 @@ function ruleChecker(
   if (Array.isArray(rules)) {
     let counter = 0;
     let valid = 0;
+    let error = false;
 
     rules.forEach((rule) => {
       if (!(rule in _Kontrolle.rulesMap)) {
         _error(
           `Rule *${rules}* doesn't exist. Please define it in the config file.`
         );
+        error = true;
         return;
       }
       const callback = _Kontrolle.rulesMap[rule];
@@ -129,7 +131,7 @@ function ruleChecker(
       counter++;
     });
 
-    return [counter, valid];
+    return error ? false : [counter, valid];
   }
 
   return false;
